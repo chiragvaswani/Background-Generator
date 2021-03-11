@@ -10,29 +10,14 @@ function randomColor() {
 }
 
 function setGradient() {
-  body.style.background =
-    "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
+  body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
 
   console.log(body.style.background);
   css.textContent = body.style.background + ";";
 }
 
 function setRandomGradient() {
-  body.style.background =
-    "linear-gradient(to right, " +
-    " rgb(" +
-    randomColor() +
-    ", " +
-    randomColor() +
-    ", " +
-    randomColor() +
-    "), rgb(" +
-    randomColor() +
-    ", " +
-    randomColor() +
-    ", " +
-    randomColor() +
-    "))";
+  body.style.background = `linear-gradient(to right, rgb(${randomColor()}, ${randomColor()}, ${randomColor()}), rgb(${randomColor()}, ${randomColor()}, ${randomColor()}))`;
   console.log(body.style.background);
 
   css.textContent = body.style.background + ";";
