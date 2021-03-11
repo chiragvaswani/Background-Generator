@@ -6,7 +6,7 @@ var button = document.querySelector("button");
 console.log(button);
 
 function randomColor() {
-  return Math.floor(Math.random() * 255);
+  return String(Math.floor(Math.random() * 255));
 }
 
 function setGradient() {
@@ -20,9 +20,19 @@ function setGradient() {
 function setRandomGradient() {
   body.style.background =
     "linear-gradient(to right, " +
-    +", " +
-    String(Math.floor(Math.random() * 255)) +
-    ")";
+    " rgb(" +
+    randomColor() +
+    ", " +
+    randomColor() +
+    ", " +
+    randomColor() +
+    "), rgb(" +
+    randomColor() +
+    ", " +
+    randomColor() +
+    ", " +
+    randomColor() +
+    "))";
   console.log(body.style.background);
 
   css.textContent = body.style.background + ";";
