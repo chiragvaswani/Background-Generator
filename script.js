@@ -2,7 +2,8 @@ var css = document.querySelector("h3");
 var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
-console.log(color1, color2);
+var button = document.querySelector("button");
+console.log(button);
 
 function setGradient() {
   body.style.background =
@@ -11,6 +12,12 @@ function setGradient() {
   css.textContent = body.style.background + ";";
 }
 
+function setRandomGradient() {
+  body.style.background = "";
+}
+
 color1.addEventListener("input", setGradient);
 
 color2.addEventListener("input", setGradient);
+
+button.addEventListener("click", setRandomGradient);
