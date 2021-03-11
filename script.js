@@ -5,6 +5,10 @@ var body = document.getElementById("gradient");
 var button = document.querySelector("button");
 console.log(button);
 
+function randomColor() {
+  return Math.floor(Math.random() * 255);
+}
+
 function setGradient() {
   body.style.background =
     "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
@@ -16,8 +20,7 @@ function setGradient() {
 function setRandomGradient() {
   body.style.background =
     "linear-gradient(to right, " +
-    String(Math.floor(Math.random() * 255)) +
-    ", " +
+    +", " +
     String(Math.floor(Math.random() * 255)) +
     ")";
   console.log(body.style.background);
