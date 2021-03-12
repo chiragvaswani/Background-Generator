@@ -9,22 +9,27 @@ function randomColor() {
   return String(Math.floor(Math.random() * 255));
 }
 
-function setGradient() {
-  body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
+function setGradient(
+  _, // _ is used to store the first parameter which is the event.
+  left = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`,
+  right = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`
+) {
+  console.log(left);
+  body.style.background = `linear-gradient(to right, ${left}, ${right})`;
 
   console.log(body.style.background);
   css.textContent = body.style.background + ";";
 }
 
-function setRandomGradient() {
-  body.style.background = `linear-gradient(to right, rgb(${randomColor()}, ${randomColor()}, ${randomColor()}), rgb(${randomColor()}, ${randomColor()}, ${randomColor()}))`;
-  console.log(body.style.background);
+// function setRandomGradient() {
+//   body.style.background = `linear-gradient(to right, rgb(${randomColor()}, ${randomColor()}, ${randomColor()}), rgb(${randomColor()}, ${randomColor()}, ${randomColor()}))`;
+//   console.log(body.style.background);
 
-  css.textContent = body.style.background + ";";
-}
+//   css.textContent = body.style.background + ";";
+// }
 
-color1.addEventListener("input", setGradient);
+// color1.addEventListener("input", setGradient);
 
-color2.addEventListener("input", setGradient);
+// color2.addEventListener("input", setGradient);
 
-button.addEventListener("click", setRandomGradient);
+button.addEventListener("click", setGradient);
