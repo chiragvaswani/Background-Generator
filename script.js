@@ -21,15 +21,14 @@ function setGradient(
   css.textContent = body.style.background + ";";
 }
 
-// function setRandomGradient() {
-//   body.style.background = `linear-gradient(to right, rgb(${randomColor()}, ${randomColor()}, ${randomColor()}), rgb(${randomColor()}, ${randomColor()}, ${randomColor()}))`;
-//   console.log(body.style.background);
+var _ = "";
 
-//   css.textContent = body.style.background + ";";
-// }
+color1.addEventListener("input", () =>
+  setGradient(_, color1.value, color2.value)
+);
 
-// color1.addEventListener("input", setGradient);
-
-// color2.addEventListener("input", setGradient);
+color2.addEventListener("input", () =>
+  setGradient(_, color1.value, color2.value)
+);
 
 button.addEventListener("click", setGradient);
